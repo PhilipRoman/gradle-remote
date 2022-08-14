@@ -2,11 +2,12 @@
 # we need bash, not just posix shell for some types of expansions
 
 # search upwards in file hierarchy for build.gradle
-while [ "$PWD" != / -a ! -f build.gradle ]; do
+while [ "$PWD" != / ] && [ ! -f build.gradle ]; do
 	cd "$(dirname "$PWD")"
 done
 
 if ! [ -f build.gradle ]; then
+	printf '%s\n' 'No build.gradle file found'
 	exit 1
 fi
 

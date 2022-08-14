@@ -6,7 +6,7 @@ It will upload your project to the remote server, run the specified gradle comma
 
 ## Configuration
 
-Set GRADLE_REMOTE_SSH to a valid ssh login target. For example `myserver.net` or `gradle_builder@example.com:1234`.
+Set GRADLE_REMOTE_SSH to a valid ssh login target. For example `myserver.net` or `gradle_builder@example.com`.
 
 Set GRADLE_REMOTE_DIR to the base directory in which projects will be stored. You probably want a dedicated user on the server for running the builds, so something like `/home/gradle/projects` will work.
 
