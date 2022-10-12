@@ -30,5 +30,5 @@ rsync -ircu --exclude build --exclude .gradle --exclude '**.swp' --delete . "$re
 # https://stackoverflow.com/questions/6592376/prevent-ssh-from-breaking-up-shell-script-parameters
 # ssh argument expansion is pure unfiltered cancer
 # TODO - pass the command through stdin instead
-ssh -t "$remote" gradle -p "$remotedir" "${@@Q}" " && mkdir -p $remotedir/build"
+ssh -t "$remote" "source .profile; " gradle -p "$remotedir" "${@@Q}" " && mkdir -p $remotedir/build"
 rsync --delete -ircuq "$remote:$remotedir/build" . | (grep -v '/$' || true)
